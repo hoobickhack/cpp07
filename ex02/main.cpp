@@ -56,66 +56,64 @@ int main(int, char**)
 #include <iostream>
 int main()
 {
-    Array<unsigned int> defaultArray(5);
+    try{
     
-    std::cout << "Size defaultArray: " << defaultArray.size() << std::endl;
+    Array<int> defArray;
+
+    std::cout << "try 01 = >> "<< defArray[0] << std::endl;
+    
+    Array<unsigned int> defaultArray(10);
+    
+    std::cout << "Size of defaultArray: " << defaultArray.size() << std::endl;
     
     defaultArray[0] = 5;
     defaultArray[1] = 51;
     defaultArray[2] = 4;
     defaultArray[3] = 32;
     defaultArray[4] = 1;
-    
-    Array<unsigned int> intArray(10);
-    
-    std::cout << "Size intArray: " << intArray.size() << std::endl;
-    
-    Array<const unsigned int> constArray(3);
-    
-    std::cout << "Size constArray: " << constArray.size() << std::endl;
-    
-    std::cout << std::endl;
+    defaultArray[9] = 99;
 
-    std::cout << "Contents defaultArray: ";
+    std::cout << "Size of defaultArray: " << defaultArray.size() << std::endl;
+    
+    Array<unsigned int> intArray(5);
+    
+    std::cout << "Size of intArray: " << intArray.size() << std::endl;
+
+    for (unsigned int i = 0; i < intArray.size(); ++i)
+        intArray[i] = i + 1;
+
+    std::cout << "defaultArray: ";
     
     for (unsigned int i = 0; i < defaultArray.size(); ++i)
         std::cout << defaultArray[i] << " ";
-        
-    std::cout << std::endl;
     
-    std::cout << "Contents intArray: ";
+    std::cout << std::endl;
 
-    for (unsigned int i = 0; i < intArray.size(); ++i)
-        intArray[i] = (i + 1) * 2;
-
+    std::cout << "intArray: ";
+    
     for (unsigned int i = 0; i < intArray.size(); ++i)
         std::cout << intArray[i] << " ";
         
- 
     std::cout << std::endl;
 
     Array<unsigned int> copiedArray = intArray;
-
-    std::cout << "Contents copiedArray: ";
-
-    for (unsigned int i = 0; i < copiedArray.size(); ++i)
-        std::cout << copiedArray[i] << " ";
-
-    std::cout << std::endl;
-
-    std::cout << std::endl;
- 
-    intArray[0] = 200;
-
-    std::cout << "After modification, intArray[0]: " << intArray[0] << std::endl;
-    std::cout << "After modification, copiedArray[0]: " << copiedArray[0] << std::endl;
-   
-    std::cout << std::endl;
-    try
-    {
-        intArray[7] = 5;
+    std::cout << "opiedArray: ";
+    for (unsigned int i = 0; i < copiedArray.size(); ++i) {
+    std::cout << copiedArray[i] << " ";
     }
-    catch (std::exception& e)
+    std::cout << std::endl;
+    
+    std::cout<< "test modif Array :" << std::endl;
+
+    intArray[0] = 100;
+    std::cout << "intArray[0] now: " << intArray[0] << std::endl;
+    std::cout << "copiedArray[0]: " << copiedArray[0] << std::endl;
+
+        
+    std::cout << "try >> "<< defaultArray[9] << std::endl;
+    std::cout  << copiedArray[5];
+    }
+     catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }

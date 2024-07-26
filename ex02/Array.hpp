@@ -6,7 +6,7 @@
 /*   By: isouaidi <isouaidi@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 19:14:18 by isouaidi          #+#    #+#             */
-/*   Updated: 2024/07/18 19:15:55 by isouaidi         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:56:09 by isouaidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Array {
 
 template <typename T>
 
-Array<T>::Array() : array(NULL), _size(0) {}
+Array<T>::Array() : array(new T[0]()), _size(0) {}
 
 template <typename T>
 
