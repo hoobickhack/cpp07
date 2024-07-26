@@ -58,9 +58,9 @@ int main()
 {
     try{
     
-    Array<int> defArray;
+    //Array<int> defArray;
 
-    std::cout << "try 01 = >> "<< defArray[0] << std::endl;
+    //std::cout << "try 01 = >> "<< defArray[0] << std::endl;
     
     Array<unsigned int> defaultArray(10);
     
@@ -72,8 +72,6 @@ int main()
     defaultArray[3] = 32;
     defaultArray[4] = 1;
     defaultArray[9] = 99;
-
-    std::cout << "Size of defaultArray: " << defaultArray.size() << std::endl;
     
     Array<unsigned int> intArray(5);
     
